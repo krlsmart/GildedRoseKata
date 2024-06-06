@@ -19,7 +19,8 @@ public class GildedRose
 
             if(isAgedBrie)
             {
-                UpdateAgeBrie(i);
+                var agedBrie = new AgedBrie(_items[i]);
+                agedBrie.UpdateQuality();
             }
             else
             {
