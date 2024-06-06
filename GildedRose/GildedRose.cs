@@ -19,20 +19,7 @@ public class GildedRose
 
             if(isAgedBrie)
             {
-                if(_items[i].Quality < 50)
-                {
-                    _items[i].Quality = _items[i].Quality + 1;
-                }
-
-                _items[i].SellIn = _items[i].SellIn - 1;
-
-                if(_items[i].SellIn < 0)
-                {
-                    if(_items[i].Quality < 50)
-                    {
-                        _items[i].Quality = _items[i].Quality + 1;
-                    }
-                }
+                UpdateAgeBrie(i);
             }
             else
             {
@@ -104,6 +91,24 @@ public class GildedRose
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private void UpdateAgeBrie(int i)
+    {
+        if(_items[i].Quality < 50)
+        {
+            _items[i].Quality = _items[i].Quality + 1;
+        }
+
+        _items[i].SellIn = _items[i].SellIn - 1;
+
+        if(_items[i].SellIn < 0)
+        {
+            if(_items[i].Quality < 50)
+            {
+                _items[i].Quality = _items[i].Quality + 1;
             }
         }
     }
